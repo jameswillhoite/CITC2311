@@ -25,21 +25,32 @@ namespace FutureValue
 
             int months = years * 12;
             decimal monthlyInterestRate = yearlyInterestRate / 12 / 100;
-
-            decimal futureValue = 0m;
-            for (int i = 0; i < months; i++)
-            {
-                futureValue = (futureValue + monthlyInvestment) * (1 + monthlyInterestRate);
-            }
+            decimal futureValue = CalculateFutureValue(monthlyInvestment, months, monthlyInterestRate);
 
             txtFutureValue.Text = futureValue.ToString("c");
             txtMonthlyInvestment.Focus();
-            
+
+        }
+
+        private static decimal CalculateFutureValue(decimal monthlyInvenstment, int months, decimal monthlyInterestRate)
+        {
+            decimal futureValue = 0m;
+            for (int i = 0; i < months; i++)
+            {
+                futureValue = (futureValue + monthlyInvenstment) * (1 + monthlyInterestRate);
+            }
+
+            return futureValue;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ClearFutureValue(object sender, EventArgs e)
+        {
+            txtFutureValue.Text = "";
         }
     }
 }
