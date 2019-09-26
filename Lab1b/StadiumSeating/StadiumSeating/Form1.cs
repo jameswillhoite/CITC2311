@@ -33,21 +33,21 @@ namespace StadiumSeating
                 //Make sure there is Valid Data entered in
                 if (!int.TryParse(txtClassA_Sold.Text, out soldA) || soldA < 0)
                 {
-                    MessageBox.Show("Invalid amount sold for Class A", "Invalid Data");
+                    MessageBox.Show("Invalid amount sold for Class A. Please only enter in whole numbers greater than or equal to zero.", "Invalid Data");
                     txtClassA_Sold.Focus();
                     clearRevenue();
                     return;
                 }
                 if (!int.TryParse(txtClassB_Sold.Text, out soldB) || soldB < 0)
                 {
-                    MessageBox.Show("Invalid amount sold for Class B", "Invalid Data");
+                    MessageBox.Show("Invalid amount sold for Class B. Please only enter in whole numbers greater than or equal to zero.", "Invalid Data");
                     txtClassB_Sold.Focus();
                     clearRevenue();
                     return;
                 }
                 if (!int.TryParse(txtClassC_Sold.Text, out soldC) || soldC < 0)
                 {
-                    MessageBox.Show("Invlaid amount sold for Class C", "Invlaid Data");
+                    MessageBox.Show("Invlaid amount sold for Class C. Please only enter in whole numbers greater than or equal to zero.", "Invlaid Data");
                     txtClassC_Sold.Focus();
                     clearRevenue();
                     return;
