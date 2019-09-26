@@ -28,26 +28,39 @@ namespace StadiumSeating
             int soldB = 0;
             int soldC = 0;
 
-            //Make sure there is Valid Data entered in
-            if (!int.TryParse(txtClassA_Sold.Text, out soldA) || soldA < 0)
+            try
             {
-                MessageBox.Show("Invalid amount sold for Class A", "Invalid Data");
-                txtClassA_Sold.Focus();
-                clearRevenue();
+                //Make sure there is Valid Data entered in
+                if (!int.TryParse(txtClassA_Sold.Text, out soldA) || soldA < 0)
+                {
+                    MessageBox.Show("Invalid amount sold for Class A", "Invalid Data");
+                    txtClassA_Sold.Focus();
+                    clearRevenue();
+                    return;
+                }
+                if (!int.TryParse(txtClassB_Sold.Text, out soldB) || soldB < 0)
+                {
+                    MessageBox.Show("Invalid amount sold for Class B", "Invalid Data");
+                    txtClassB_Sold.Focus();
+                    clearRevenue();
+                    return;
+                }
+                if (!int.TryParse(txtClassC_Sold.Text, out soldC) || soldC < 0)
+                {
+                    MessageBox.Show("Invlaid amount sold for Class C", "Invlaid Data");
+                    txtClassC_Sold.Focus();
+                    clearRevenue();
+                    return;
+                }
+            }
+            catch (ArithmeticException)
+            {
+                MessageBox.Show("Seems that you entered invalid Data. Please correct and try again.", "Invalid Data");
                 return;
             }
-            if (!int.TryParse(txtClassB_Sold.Text, out soldB) || soldB < 0)
+            catch (Exception)
             {
-                MessageBox.Show("Invalid amount sold for Class B", "Invalid Data");
-                txtClassB_Sold.Focus();
-                clearRevenue();
-                return;
-            }
-            if (!int.TryParse(txtClassC_Sold.Text, out soldC) || soldC < 0)
-            {
-                MessageBox.Show("Invlaid amount sold for Class C", "Invlaid Data");
-                txtClassC_Sold.Focus();
-                clearRevenue();
+                MessageBox.Show("What did you Enter here? I've had a error. Please correct.", "Really Bad Error");
                 return;
             }
 
