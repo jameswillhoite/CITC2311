@@ -10,22 +10,22 @@ namespace StudentScores
     public class Student
     {
         public string name = "";
-        public List<double> scores = new List<double>(0);
+        public List<int> scores = new List<int>(0);
 
-        public void addScore(double score)
+        public void addScore(int score)
         {
             scores.Add(score);
         }
 
         public void addScore(Array array_scores)
         {
-            foreach(double score in array_scores)
+            foreach(int score in array_scores)
             {
                 scores.Add(score);
             }
         }
 
-        public void updateScore(int index, double score)
+        public void updateScore(int index, int score)
         {
             try
             {
@@ -52,10 +52,7 @@ namespace StudentScores
         public override string ToString()
         {
             string text = name + " ";
-            foreach(double score in scores)
-            {
-                text += "|" + score;
-            }
+            text += String.Join("|", scores);
 
             return text;
         }
