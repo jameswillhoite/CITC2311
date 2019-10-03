@@ -16,6 +16,8 @@ namespace StudentScores
 
         protected Student student;
 
+        protected StudentScore Score;
+
         //TODO: Possibly create Class for Score ????
 
         public frmUpdateScore()
@@ -28,8 +30,34 @@ namespace StudentScores
             this.update = update;
         }
 
+        public void setStudent(Student student)
+        {
+            this.student = student;
+        }
+
+        public void setStudentScore(StudentScore Score)
+        {
+            this.Score = Score;
+            txtScore.Text = Score.score.ToString();
+        }
+
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            int score;
+            if(!int.TryParse(txtScore.Text, out score) || score < 0 || score > 100)
+            {
+                MessageBox.Show("Please enter a Valid Score between 0 and 100.", "Invalid Score");
+                return;
+            }
+
+            this.Score.score = score;
+            this.update.Show();
+            this.update.refreshScores();
             this.Close();
         }
     }

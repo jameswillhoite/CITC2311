@@ -172,6 +172,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbxStudents);
             this.Name = "frmStudentScores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Scores";
             this.Load += new System.EventHandler(this.FrmStudentScores_Load);
             this.ResumeLayout(false);

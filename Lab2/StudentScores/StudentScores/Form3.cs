@@ -29,10 +29,11 @@ namespace StudentScores
         {
             this.student = student;
             txtName.Text = student.name;
-            foreach(int score in student.scores)
+            for(int i = 0; i < student.scores.Count(); i++)
             {
-                lbxScores.Items.Add(score);
+                lbxScores.Items.Add(student.scores[i].score);
             }
+           
             
         }
 
@@ -40,6 +41,15 @@ namespace StudentScores
         {
             student.addScore(score);
             lbxScores.Items.Add(score);
+        }
+
+        public void refreshScores()
+        {
+            lbxScores.Items.Clear();
+            for(int i = 0; i < student.scores.Count(); i++)
+            {
+                lbxScores.Items.Add(student.scores[i].score);
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -72,6 +82,39 @@ namespace StudentScores
                 lbxScores.Items.Clear();
             }
 
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmUpdateScore update = new frmUpdateScore();
+                update.setUpdateForm(this);
+                update.setStudent(this.student);
+                update.setStudentScore(this.student.scores[lbxScores.SelectedIndex]);
+                this.Hide();
+                update.Show();
+            } catch(KeyNotFoundException)
+            {
+                MessageBox.Show("Hmm.. Can seem to find this score.", "Warning");
+                return;
+            }
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            if(lbxScores.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a score to remove.");
+                return;
+            }
+            StudentScore Score = this.student.scores[lbxScores.SelectedIndex];
+            var confirmDelete = MessageBox.Show("Are you sure want to delete the score " + Score.score + " for " + student.name + "?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if(confirmDelete == DialogResult.Yes)
+            {
+                this.student.removeScore(lbxScores.SelectedIndex);
+                this.refreshScores();
+            }
         }
     }
 }

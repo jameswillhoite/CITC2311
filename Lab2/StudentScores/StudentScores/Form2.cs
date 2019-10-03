@@ -51,7 +51,12 @@ namespace StudentScores
         private void addScore(int score)
         {
             student.addScore(score);
-            txtScores.Text = String.Join("|", student.scores);
+            List<int> temp = new List<int>(0);
+            for(int i = 0; i < student.scores.Count(); i++)
+            {
+                temp.Add(student.scores[i].score);
+            }
+            txtScores.Text = String.Join("|", temp.ToArray());
         }
 
         private void Button2_Click(object sender, EventArgs e)

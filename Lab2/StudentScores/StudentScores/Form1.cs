@@ -98,18 +98,18 @@ namespace StudentScores
                 int score_total = 0;
                 int score_count = 0;
                 double score_average = 0;
-                foreach (int score in student.scores)
+                for(int i = 0; i < student.scores.Count(); i++)
                 {
-                    score_total += score;
                     score_count++;
+                    score_total += student.scores[i].score;
                 }
-
+               
                 if (score_count > 0)
                 {
                     score_average = score_total / score_count;
                 }
 
-                txtAverage.Text = String.Format("{0:F3}", score_average);
+                txtAverage.Text = String.Format("{0:F0}", score_average);
                 txtScoreCount.Text = score_count.ToString();
                 txtScoreTotal.Text = String.Format("{0:F0}" ,score_total);
             }
