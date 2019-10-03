@@ -43,7 +43,9 @@ namespace StudentScores
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            this.update.Show();
             this.Close();
+           
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -56,8 +58,8 @@ namespace StudentScores
             }
 
             this.Score.score = score;
-            this.update.Show();
             this.update.refreshScores();
+            this.update.Show();
             this.Close();
         }
     }
