@@ -40,6 +40,9 @@ namespace StudentScores
 
         }
 
+        /*
+         * Refresh the ListBox with the Students
+         */
         public void refreshStudents()
         {
             lbxStudents.Items.Clear();
@@ -55,6 +58,9 @@ namespace StudentScores
             txtScoreTotal.Text = "";
         }
 
+        /*
+         * To initialize the first 3 students
+         */
         private void FrmStudentScores_Load(object sender, EventArgs e)
         {
             Student student1 = new Student();
@@ -76,6 +82,9 @@ namespace StudentScores
             addStudent(student3);
         }
 
+        /*
+         * When the User selects a new Student, sum up the totals
+         */
         private void LbxStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
             Student student;
