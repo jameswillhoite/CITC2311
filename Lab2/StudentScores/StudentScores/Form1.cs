@@ -16,8 +16,8 @@ namespace StudentScores
         /*
          * Define Variables to be used
          */
-        protected SortedList<int, Student> students = new SortedList<int, Student>(3);
-        private int studentCount = 0;
+        protected List<Student> students = new List<Student>(0);
+
         public frmStudentScores()
         {
             InitializeComponent();
@@ -34,29 +34,26 @@ namespace StudentScores
 
         public void addStudent(Student student)
         {
-            students.Add(studentCount, student);
+            students.Add(student);
 
-            lbxStudents.Items.Insert(studentCount, student);
-
-            studentCount++;
+            lbxStudents.Items.Add(student);
 
         }
 
         public void refreshStudents()
         {
             lbxStudents.Items.Clear();
-            for(int i = 0; i < students.Count(); i++)
+            for (int i = 0; i < students.Count(); i++)
             {
-                lbxStudents.Items.Insert(i, students[i]);
+                lbxStudents.Items.Add(students[i]);
             }
+
 
             lbxStudents.SelectedIndex = -1;
             txtAverage.Text = "";
             txtScoreCount.Text = "";
             txtScoreTotal.Text = "";
         }
-
-       
 
         private void FrmStudentScores_Load(object sender, EventArgs e)
         {
@@ -145,9 +142,10 @@ namespace StudentScores
                 return;
             }
 
-            students.Remove(lbxStudents.SelectedIndex);
+            students.RemoveAt(lbxStudents.SelectedIndex);
             lbxStudents.Items.RemoveAt(lbxStudents.SelectedIndex);
             lbxStudents.SelectedIndex = -1;
+            this.refreshStudents();
                        
         }
 

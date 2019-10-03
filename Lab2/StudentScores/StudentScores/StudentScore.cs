@@ -9,5 +9,10 @@ namespace StudentScores
     public class StudentScore
     {
         public int score;
+
+        public override string ToString()
+        {
+            return this.score + "";
+        }
     }
 }
