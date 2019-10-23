@@ -78,5 +78,34 @@ namespace Calculator
             if(txtCurentValue.Text.IndexOf(".") == -1)
                 txtCurentValue.Text += ".";
         }
+
+        private void BtnPlus_Click(object sender, EventArgs e)
+        {
+            if(!this.calculator.setNumber(txtCurentValue.Text))
+            {
+                MessageBox.Show("Could not Add Numbers");
+                return;
+            }
+            this.calculator.setOperator("+");
+            this.clearNumber();
+        }
+
+        private void clearNumber()
+        {
+            txtCurentValue.Text = "";
+        }
+
+        private void BtnEqual_Click(object sender, EventArgs e)
+        {
+            if(!this.calculator.setNumber(txtCurentValue.Text))
+            {
+                MessageBox.Show("Could not Calculate Number");
+                return;
+            }
+
+            this.calculator.Calculate();
+
+            txtCurentValue.Text = this.calculator.GetCurrentValue().ToString();
+        }
     }
 }

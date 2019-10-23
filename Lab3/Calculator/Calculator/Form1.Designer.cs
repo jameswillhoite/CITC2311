@@ -247,6 +247,7 @@
             this.btnPlus.TabStop = false;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.BtnPlus_Click);
             // 
             // btnSqrt
             // 
@@ -280,6 +281,7 @@
             this.btnEqual.TabStop = false;
             this.btnEqual.Text = "=";
             this.btnEqual.UseVisualStyleBackColor = true;
+            this.btnEqual.Click += new System.EventHandler(this.BtnEqual_Click);
             // 
             // btnPosMin
             // 
