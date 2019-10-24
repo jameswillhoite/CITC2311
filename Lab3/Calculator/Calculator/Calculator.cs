@@ -8,79 +8,82 @@ namespace Calculator
 {
     public class Calculator
     {
-        protected decimal currentValue = 0m;
-        protected decimal opperand1 = 0m;
-        protected decimal opperand2 = 0m;
-        protected string op = "";
-
-        public decimal CurrentValue { get; } = 0m;
-
-        public void Add()
-        {
-            decimal value = this.opperand1 + this.opperand2;
-            this.currentValue = value;
-        }
-
-        public void Sub(decimal value)
-        {
-            this.currentValue -= value;
-        }
-
-        public void Multiply(decimal value)
-        {
-            this.currentValue *= value;
-        }
-
-        public void Divide()
-        {
-
-            decimal value = this.opperand1 / this.opperand2;
-            this.opperand1 = value;
-            this.currentValue = value;
-            this.op = "";
-        }
+        public string input = "";
+        public string opperand1 = "0";
+        public string opperand2 = "0";
+        public char op;
+        public double result = 0.0;
 
         public void Calculate()
         {
-            switch(this.op)
-            {
-                case "+":
-                    this.Add();
-                    break;
+            double num1;
+            double num2;
 
+            double.TryParse(opperand1, out num1);
+            double.TryParse(opperand2, out num2);
+
+            if (op == '+')
+            {
+                result = num1 + num2;
+                input = result.ToString();
             }
-
-            this.opperand1 = this.currentValue;
-            this.op = "";
-        }
-
-        public decimal GetCurrentValue()
-        {
-            return this.currentValue;
-        }
-
-        public void setOperator(string op)
-        {
-            this.op = op;
-        }
-
-        public bool setNumber(string number)
-        {
-            decimal num;
-            if(!decimal.TryParse(number, out num))
+            else if (op == '-')
             {
-                return false;
+                result = num1 - num2;
+                input = result.ToString();
             }
-
-            if (this.opperand1 != 0)
+            else if (op == '*')
             {
-                this.opperand2 = num;
+                result = num1 * num2;
+                input = result.ToString();
+            }
+            else if (op == '/')
+            {
+                if(num2 != 0)
+                {
+                    result = num1 / num2;
+                    input = result.ToString();
+                }
+                else
+                {
+                    throw new DivideByZeroException();
+                }
+            }
+        }
+
+        public void Sqrt()
+        {
+            double num1;
+            double.TryParse(input, out num1);
+            result = Math.Sqrt(num1);
+            input = result.ToString();
+        }
+
+        public void Reciproc()
+        {
+            double num1;
+            double.TryParse(input, out num1);
+
+            if (num1 != 0)
+            {
+                result = 1 / num1;
+                input = result.ToString();
             }
             else
-                this.opperand1 = num;
-
-            return true;
-
+            {
+                input = string.Empty;
+                throw new DivideByZeroException();
+            }
         }
+
+        public void NegPos()
+        {
+            double num1;
+            double.TryParse(input, out num1);
+
+            result = num1 / -1;
+            input = result.ToString();
+        }
+ 
     }
 }

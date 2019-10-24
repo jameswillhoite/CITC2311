@@ -46,7 +46,7 @@
             this.btn0 = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.btnSqrt = new System.Windows.Forms.Button();
-            this.btnExpo = new System.Windows.Forms.Button();
+            this.btnReciproc = new System.Windows.Forms.Button();
             this.btnEqual = new System.Windows.Forms.Button();
             this.btnPosMin = new System.Windows.Forms.Button();
             this.btnPeriod = new System.Windows.Forms.Button();
@@ -61,6 +61,8 @@
             this.txtCurentValue.Size = new System.Drawing.Size(212, 29);
             this.txtCurentValue.TabIndex = 0;
             this.txtCurentValue.TabStop = false;
+            this.txtCurentValue.Text = "0";
+            this.txtCurentValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnBack
             // 
@@ -72,6 +74,7 @@
             this.btnBack.TabStop = false;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // btnClear
             // 
@@ -83,6 +86,7 @@
             this.btnClear.TabStop = false;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // btn7
             // 
@@ -130,6 +134,7 @@
             this.btnDivide.TabStop = false;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.BtnDivide_Click);
             // 
             // btn4
             // 
@@ -177,6 +182,7 @@
             this.btnMultiply.TabStop = false;
             this.btnMultiply.Text = "*";
             this.btnMultiply.UseVisualStyleBackColor = true;
+            this.btnMultiply.Click += new System.EventHandler(this.BtnMultiply_Click);
             // 
             // btn1
             // 
@@ -224,6 +230,7 @@
             this.btnMinus.TabStop = false;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.BtnMinus_Click);
             // 
             // btn0
             // 
@@ -259,17 +266,19 @@
             this.btnSqrt.TabStop = false;
             this.btnSqrt.Text = "sqrt";
             this.btnSqrt.UseVisualStyleBackColor = true;
+            this.btnSqrt.Click += new System.EventHandler(this.BtnSqrt_Click);
             // 
-            // btnExpo
+            // btnReciproc
             // 
-            this.btnExpo.ForeColor = System.Drawing.Color.Blue;
-            this.btnExpo.Location = new System.Drawing.Point(195, 126);
-            this.btnExpo.Name = "btnExpo";
-            this.btnExpo.Size = new System.Drawing.Size(36, 26);
-            this.btnExpo.TabIndex = 18;
-            this.btnExpo.TabStop = false;
-            this.btnExpo.Text = "1/X";
-            this.btnExpo.UseVisualStyleBackColor = true;
+            this.btnReciproc.ForeColor = System.Drawing.Color.Blue;
+            this.btnReciproc.Location = new System.Drawing.Point(195, 126);
+            this.btnReciproc.Name = "btnReciproc";
+            this.btnReciproc.Size = new System.Drawing.Size(36, 26);
+            this.btnReciproc.TabIndex = 18;
+            this.btnReciproc.TabStop = false;
+            this.btnReciproc.Text = "1/X";
+            this.btnReciproc.UseVisualStyleBackColor = true;
+            this.btnReciproc.Click += new System.EventHandler(this.BtnReciproc_Click);
             // 
             // btnEqual
             // 
@@ -293,6 +302,7 @@
             this.btnPosMin.TabStop = false;
             this.btnPosMin.Text = "+/-";
             this.btnPosMin.UseVisualStyleBackColor = true;
+            this.btnPosMin.Click += new System.EventHandler(this.BtnPosMin_Click);
             // 
             // btnPeriod
             // 
@@ -308,13 +318,15 @@
             // 
             // frmCalculator
             // 
+            this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(249, 228);
             this.Controls.Add(this.btnPeriod);
             this.Controls.Add(this.btnPosMin);
             this.Controls.Add(this.btnEqual);
-            this.Controls.Add(this.btnExpo);
+            this.Controls.Add(this.btnReciproc);
             this.Controls.Add(this.btnSqrt);
             this.Controls.Add(this.btnPlus);
             this.Controls.Add(this.btn0);
@@ -361,7 +373,7 @@
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Button btnSqrt;
-        private System.Windows.Forms.Button btnExpo;
+        private System.Windows.Forms.Button btnReciproc;
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button btnPosMin;
         private System.Windows.Forms.Button btnPeriod;
