@@ -30,6 +30,7 @@
         {
             this.lblXY = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblRobot = new System.Windows.Forms.Label();
             this.btnNorth = new System.Windows.Forms.Button();
             this.btnSouth = new System.Windows.Forms.Button();
             this.btnEast = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.btnGo1 = new System.Windows.Forms.Button();
             this.btnGo10 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblXY
@@ -50,11 +52,23 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMain.Controls.Add(this.lblRobot);
             this.pnlMain.Font = new System.Drawing.Font("Wingdings", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMain.Location = new System.Drawing.Point(16, 30);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(277, 308);
             this.pnlMain.TabIndex = 1;
+            // 
+            // lblRobot
+            // 
+            this.lblRobot.AutoSize = true;
+            this.lblRobot.Font = new System.Drawing.Font("Wingdings", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.lblRobot.Location = new System.Drawing.Point(69, 119);
+            this.lblRobot.Name = "lblRobot";
+            this.lblRobot.Size = new System.Drawing.Size(29, 12);
+            this.lblRobot.TabIndex = 0;
+            this.lblRobot.Text = "233";
             // 
             // btnNorth
             // 
@@ -64,6 +78,7 @@
             this.btnNorth.TabIndex = 1;
             this.btnNorth.Text = "N";
             this.btnNorth.UseVisualStyleBackColor = true;
+            this.btnNorth.Click += new System.EventHandler(this.BtnNorth_Click);
             // 
             // btnSouth
             // 
@@ -73,6 +88,7 @@
             this.btnSouth.TabIndex = 2;
             this.btnSouth.Text = "S";
             this.btnSouth.UseVisualStyleBackColor = true;
+            this.btnSouth.Click += new System.EventHandler(this.BtnSouth_Click);
             // 
             // btnEast
             // 
@@ -83,6 +99,7 @@
             this.btnEast.TabIndex = 3;
             this.btnEast.Text = "E";
             this.btnEast.UseVisualStyleBackColor = true;
+            this.btnEast.Click += new System.EventHandler(this.BtnEast_Click);
             // 
             // btnWest
             // 
@@ -92,6 +109,7 @@
             this.btnWest.TabIndex = 4;
             this.btnWest.Text = "W";
             this.btnWest.UseVisualStyleBackColor = true;
+            this.btnWest.Click += new System.EventHandler(this.BtnWest_Click);
             // 
             // btnGo1
             // 
@@ -101,6 +119,7 @@
             this.btnGo1.TabIndex = 5;
             this.btnGo1.Text = "Go 1";
             this.btnGo1.UseVisualStyleBackColor = true;
+            this.btnGo1.Click += new System.EventHandler(this.BtnGo1_Click);
             // 
             // btnGo10
             // 
@@ -110,6 +129,7 @@
             this.btnGo10.TabIndex = 6;
             this.btnGo10.Text = "Go 10";
             this.btnGo10.UseVisualStyleBackColor = true;
+            this.btnGo10.Click += new System.EventHandler(this.BtnGo10_Click);
             // 
             // btnExit
             // 
@@ -120,6 +140,7 @@
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // frmSimpleRobot
             // 
@@ -138,6 +159,8 @@
             this.Controls.Add(this.lblXY);
             this.Name = "frmSimpleRobot";
             this.Text = "Simple Robot";
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +177,7 @@
         private System.Windows.Forms.Button btnGo1;
         private System.Windows.Forms.Button btnGo10;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblRobot;
     }
 }
 
