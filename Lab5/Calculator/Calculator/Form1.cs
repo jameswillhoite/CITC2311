@@ -18,6 +18,8 @@ namespace Calculator
         public frmCalculator()
         {
             InitializeComponent();
+            this.calculator.ValueStoredInMemory += this.OnValueInMemory;
+            this.calculator.ValueNotInMemory += this.OnValueNotInMemory;
         }
 
         private void FrmCalculator_Load(object sender, EventArgs e)
@@ -309,16 +311,24 @@ namespace Calculator
             this.clear = false;
         }
 
+        public void OnValueInMemory(object source, EventArgs args)
+        {
+            lblMemory.Text = "M";
+        }
+
+        public void OnValueNotInMemory(object source, EventArgs args)
+        {
+            lblMemory.Text = "";
+        }
+
         private void BtnMC_Click(object sender, EventArgs e)
         {
             this.calculator.ClearMemory();
-            lblMemory.Text = "";
         }
 
         private void BtnMS_Click(object sender, EventArgs e)
         {
             this.calculator.SaveToMemory();
-            lblMemory.Text = "M";
         }
 
         private void BtnMR_Click(object sender, EventArgs e)
@@ -330,7 +340,6 @@ namespace Calculator
         private void BtnMPlus_Click(object sender, EventArgs e)
         {
             this.calculator.AddToMemory();
-            lblMemory.Text = "M";
         }
     }
 }
