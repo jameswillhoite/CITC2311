@@ -67,6 +67,7 @@
             this.rbPigLatin.TabStop = true;
             this.rbPigLatin.Text = "Pig &Latin";
             this.rbPigLatin.UseVisualStyleBackColor = true;
+            this.rbPigLatin.CheckedChanged += new System.EventHandler(this.RbPigLatin_CheckedChanged);
             // 
             // rbPigGreek
             // 
@@ -77,6 +78,7 @@
             this.rbPigGreek.TabIndex = 3;
             this.rbPigGreek.Text = "Pig &Greek";
             this.rbPigGreek.UseVisualStyleBackColor = true;
+            this.rbPigGreek.CheckedChanged += new System.EventHandler(this.RbPigGreek_CheckedChanged);
             // 
             // tbTranslated
             // 
@@ -104,6 +106,7 @@
             this.btnTranslate.TabIndex = 5;
             this.btnTranslate.Text = "&Translate";
             this.btnTranslate.UseVisualStyleBackColor = true;
+            this.btnTranslate.Click += new System.EventHandler(this.BtnTranslate_Click);
             // 
             // btnClear
             // 
@@ -113,15 +116,18 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "&Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(295, 418);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // frmMain
             // 

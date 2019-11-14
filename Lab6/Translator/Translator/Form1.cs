@@ -16,5 +16,49 @@ namespace Translator
         {
             InitializeComponent();
         }
+
+        private void BtnTranslate_Click(object sender, EventArgs e)
+        {
+            string english = tbEnglish.Text;
+            if(english.Length == 0)
+            {
+                tbTranslated.Text = "Error. Please enter something to translate.";
+                return;
+            }
+
+            string response = "";
+            if(rbPigLatin.Checked)
+            {
+                response = (new PigLatinTranslator()).Translate(english);
+            }
+            else
+            {
+                response = (new PigGreekTranslator()).Translate(english);
+            }
+
+            tbTranslated.Text = response;
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            tbEnglish.Text = "";
+            tbTranslated.Text = "";
+            rbPigLatin.Checked = true;
+        }
+
+        private void RbPigLatin_CheckedChanged(object sender, EventArgs e)
+        {
+            lblTranslate.Text = "Pig Latin Translation:";
+        }
+
+        private void RbPigGreek_CheckedChanged(object sender, EventArgs e)
+        {
+            lblTranslate.Text = "Pig Greek Translation:";
+        }
     }
 }
