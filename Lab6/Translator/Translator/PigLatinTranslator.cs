@@ -85,15 +85,21 @@ namespace Translator
             word = this.Punctuation(word, out pun);
 
             //Check for uppercase first word
-            Regex upper = new Regex("^[A-Z]");
+            Regex upper = new Regex("^[A-Z]*");
             bool up_first = false;
-            if(upper.IsMatch(word))
+            bool all_upper = false;
+            int matches = upper.Match(word).Length;
+            if(matches == 1)
             {
                
                 up_first = true;
                 StringBuilder sb = new StringBuilder(word);
                 sb[0] = sb[0].ToString().ToLower().ToCharArray()[0];
                 word = sb.ToString();
+            }
+            else if (matches > 1)
+            {
+                all_upper = true;
             }
 
             string y_vowel = vowels + "yY"; //Add 'Y' for consonants
@@ -114,6 +120,10 @@ namespace Translator
                 StringBuilder sb = new StringBuilder(word);
                 sb[0] = sb[0].ToString().ToUpper().ToCharArray()[0];
                 word = sb.ToString();
+            }
+            if(all_upper)
+            {
+                word = word.ToUpper();
             }
 
             return word + pun;
