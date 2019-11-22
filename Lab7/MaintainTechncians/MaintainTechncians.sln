@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintainTechncians", "MaintainTechncians\MaintainTechncians.csproj", "{E2C638AC-C02E-4882-A199-2CB9F3E6DDAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2C638AC-C02E-4882-A199-2CB9F3E6DDAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C638AC-C02E-4882-A199-2CB9F3E6DDAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C638AC-C02E-4882-A199-2CB9F3E6DDAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C638AC-C02E-4882-A199-2CB9F3E6DDAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CFEBC63-1711-409F-9AF4-F2D990F394F2}
+	EndGlobalSection
+EndGlobal
