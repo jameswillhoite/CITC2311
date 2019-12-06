@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MaintainTechncians
+namespace Lab7
 {
     public partial class Form1 : Form
     {
@@ -17,15 +17,10 @@ namespace MaintainTechncians
             InitializeComponent();
         }
 
-        private void TechniciansBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void techniciansBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.techniciansBindingSource.EndEdit();
-
-            //DataRow[] row = this.techSupportDataSet.Technicians.Select("TechID = '" + techIDTextBox.Text + "'");
-            //Console.WriteLine(row[0][3] + ", " +phoneTextBox.Text);
-            //row[0][3] = phoneTextBox.Text;
-            //this.techSupportDataSet.Tables[0].AcceptChanges();
             this.tableAdapterManager.UpdateAll(this.techSupportDataSet);
 
         }
