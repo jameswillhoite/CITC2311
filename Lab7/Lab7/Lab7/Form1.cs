@@ -12,6 +12,7 @@ namespace Lab7
 {
     public partial class Form1 : Form
     {
+        protected string toDo = "E";
         public Form1()
         {
             InitializeComponent();
@@ -21,9 +22,11 @@ namespace Lab7
         {
             if (!this.ValidateFields())
                 return;
+
             this.Validate();
             this.techniciansBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.techSupportDataSet);
+
 
         }
 
@@ -59,14 +62,16 @@ namespace Lab7
             return true;
         }
 
+       
+
         private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

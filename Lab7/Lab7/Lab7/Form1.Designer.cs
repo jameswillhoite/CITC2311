@@ -230,6 +230,7 @@
             this.techIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "TechID", true));
             this.techIDTextBox.Location = new System.Drawing.Point(67, 42);
             this.techIDTextBox.Name = "techIDTextBox";
+            this.techIDTextBox.ReadOnly = true;
             this.techIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.techIDTextBox.TabIndex = 2;
             // 
