@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label techIDLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label phoneLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.techSupportDataSet = new Lab7.TechSupportDataSet();
             this.techniciansBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.techniciansTableAdapter = new Lab7.TechSupportDataSetTableAdapters.TechniciansTableAdapter();
@@ -64,6 +64,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.techniciansBindingNavigator)).BeginInit();
             this.techniciansBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // techIDLabel
+            // 
+            techIDLabel.AutoSize = true;
+            techIDLabel.Location = new System.Drawing.Point(12, 45);
+            techIDLabel.Name = "techIDLabel";
+            techIDLabel.Size = new System.Drawing.Size(49, 13);
+            techIDLabel.TabIndex = 1;
+            techIDLabel.Text = "Tech ID:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(23, 72);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 3;
+            nameLabel.Text = "Name:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(26, 100);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 5;
+            emailLabel.Text = "Email:";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.AutoSize = true;
+            phoneLabel.Location = new System.Drawing.Point(20, 127);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(41, 13);
+            phoneLabel.TabIndex = 7;
+            phoneLabel.Text = "Phone:";
             // 
             // techSupportDataSet
             // 
@@ -216,15 +252,6 @@
             this.techniciansBindingNavigatorSaveItem.Text = "Save Data";
             this.techniciansBindingNavigatorSaveItem.Click += new System.EventHandler(this.techniciansBindingNavigatorSaveItem_Click);
             // 
-            // techIDLabel
-            // 
-            techIDLabel.AutoSize = true;
-            techIDLabel.Location = new System.Drawing.Point(12, 45);
-            techIDLabel.Name = "techIDLabel";
-            techIDLabel.Size = new System.Drawing.Size(49, 13);
-            techIDLabel.TabIndex = 1;
-            techIDLabel.Text = "Tech ID:";
-            // 
             // techIDTextBox
             // 
             this.techIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "TechID", true));
@@ -234,15 +261,6 @@
             this.techIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.techIDTextBox.TabIndex = 2;
             // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(23, 72);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(38, 13);
-            nameLabel.TabIndex = 3;
-            nameLabel.Text = "Name:";
-            // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "Name", true));
@@ -251,15 +269,6 @@
             this.nameTextBox.Size = new System.Drawing.Size(210, 20);
             this.nameTextBox.TabIndex = 4;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(26, 100);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(35, 13);
-            emailLabel.TabIndex = 5;
-            emailLabel.Text = "Email:";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "Email", true));
@@ -267,15 +276,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(210, 20);
             this.emailTextBox.TabIndex = 6;
-            // 
-            // phoneLabel
-            // 
-            phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(20, 127);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(41, 13);
-            phoneLabel.TabIndex = 7;
-            phoneLabel.Text = "Phone:";
             // 
             // phoneTextBox
             // 
@@ -300,7 +300,7 @@
             this.Controls.Add(this.techIDTextBox);
             this.Controls.Add(this.techniciansBindingNavigator);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Maintain Technicians";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.techSupportDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.techniciansBindingSource)).EndInit();
