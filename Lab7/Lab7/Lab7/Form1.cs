@@ -16,6 +16,18 @@ namespace Lab7
         public Form1()
         {
             InitializeComponent();
+            this.techniciansBindingSource.PositionChanged += this.onPositionChanged;
+            this.techniciansBindingSource.AddingNew += this.onAddingNew;
+        }
+
+        private void onPositionChanged(object source, EventArgs e)
+        {
+            
+        }
+
+        private void onAddingNew(object source, EventArgs e)
+        {
+
         }
 
         private void techniciansBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -23,9 +35,33 @@ namespace Lab7
             if (!this.ValidateFields())
                 return;
 
-            this.Validate();
-            this.techniciansBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.techSupportDataSet);
+            try
+            {
+                this.Validate();
+                this.techniciansBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.techSupportDataSet);
+            } 
+            catch (NoNullAllowedException)
+            {
+                MessageBox.Show("Please fill in all fields");
+                return;
+            }
+            catch (DBConcurrencyException)
+            {
+                MessageBox.Show("The data has changed. Please refresh");
+                return;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an Error. Please close and try again");
+                return; 
+            }
+
+            bindingNavigatorMovePreviousItem.Enabled = true;
+            bindingNavigatorMoveNextItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorMoveFirstItem.Enabled = true;
+            bindingNavigatorAddNewItem.Enabled = true;
 
 
         }
@@ -66,12 +102,19 @@ namespace Lab7
 
         private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            
+            bindingNavigatorMovePreviousItem.Enabled = false;
+            bindingNavigatorMoveNextItem.Enabled = false;
+            bindingNavigatorMoveLastItem.Enabled = false;
+            bindingNavigatorMoveFirstItem.Enabled = false;
+            bindingNavigatorAddNewItem.Enabled = false;
         }
 
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            
+            bindingNavigatorMovePreviousItem.Enabled = false;
+            bindingNavigatorMoveNextItem.Enabled = false;
+            bindingNavigatorMoveLastItem.Enabled = false;
+            bindingNavigatorMoveFirstItem.Enabled = false;
         }
     }
 }
