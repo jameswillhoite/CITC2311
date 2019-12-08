@@ -1,0 +1,12 @@
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\bin\Debug\TechSupport.mdf
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\bin\Debug\TechSupport_log.ldf
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.csprojAssemblyReference.cache
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.Form1.resources
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.Properties.Resources.resources
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.GenerateResource.cache
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.CoreCompileInputs.cache
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.exe
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\obj\Debug\Lab7.pdb
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe.config
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe
+C:\Users\james.JAMESWILLHOITE\source\repos\jameswillhoite\CITC2311\Lab7\Lab7\Lab7\bin\Debug\Lab7.pdb
